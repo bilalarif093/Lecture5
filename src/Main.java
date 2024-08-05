@@ -1,6 +1,17 @@
 public class Main {
     public static void main(String[] args) {
         //recursive
+        /* factorial
+        * 4! = 4 * 3 * 2 * 1 = 24
+        * 3! = 3 * 2!
+        * 2! = 2 * 1!
+        * 1! = 1 * 0!
+        * 0! = 1
+        * n! = n * (n-1)!
+        * */
+
+
+
         /*
         * int Power (base, exp){}
         * 2^4 = 2 * 2^3 = 16
@@ -23,19 +34,35 @@ public class Main {
         * */
         //printSeries(5);
         //remaining code
-        System.out.println("Power = "+power(2,4));
+        //System.out.println("Power = "+power(2,4));
         //Power = 16
+        System.out.println(fact(4));//24
 
     }
-    //Power function using recursion
-    static int power (int base, int exp){//base= 2, exp = 0
-        if(exp==0) {//exp == 0 true
+    //find factorial
+    public static int fact(int num){ // 1
+        if (num==0 || num==1){//num = 1 true
             return 1;
         }
         else {
-            return base * power(base, exp - 1);//exp 1-1 = 0
+            return num * fact(num - 1);//recursive call(stack push)
         }
     }
+
+
+
+
+
+
+    //Power function using recursion
+//    static int power (int base, int exp){//base= 2, exp = 0
+//        if(exp==0) {//exp == 0 true
+//            return 1;
+//        }
+//        else {
+//            return base * power(base, exp - 1);//exp 1-1 = 0
+//        }
+//    }
 
 
 
