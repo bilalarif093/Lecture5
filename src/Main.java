@@ -1,15 +1,42 @@
 public class Main {
     public static void main(String[] args) {
-
-
-
-
-
+        //factorial 4! = 3 * 2!
+        //2! = 2 * 1!
+        //1! = 1 * 0!
+        //0! = 1 base condition
+        // n! = n * n-1!
+        //n*fact(n-1);
 
         //printSeries(3);
         //System.out.println(countDigit(123));
-
+        System.out.println(fact(4));
+        //power
+        //n^p = n*n......p time
+        //n^1  = n
+        //n^2 = n*n^(1)
+        //int prevpow = power(n,p-1);
+        //return num*prevpow
     }
+    static int power(int num,int exp){
+        if (exp==0)
+            return 1;
+        return  num * power(num,exp-1);
+    }
+    //factorial
+    private static int fact(int num){//1
+        if(num == 0 || num == 1){
+            return num;
+        }
+        int prevfact = fact(num-1);//2-1 = 1
+        return num * prevfact;
+    }
+
+
+
+
+
+
+
     //recursive function int n = 123/10;=>12.3==0 CountDigit(num/10)
 //    public static int countDigit(int num){//1
 //        //recursive solution
