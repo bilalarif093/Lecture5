@@ -1,6 +1,15 @@
 public class Main {
     public static void main(String[] args) {
         //recursive
+        //num = 123
+        /*digitCount(123)
+        * 123 = digitCount(123/10) 123/10 = 12
+        * 12 = 1+digitCount(12/10) 12/10 = 1
+        * 1 = 1+digitCount(1/10) 1/10 = 0
+        * num == 0 base condition
+        * return 1
+        * */
+
         /* factorial
         * 4! = 4 * 3 * 2 * 1 = 24
         * 3! = 3 * 2!
@@ -36,18 +45,32 @@ public class Main {
         //remaining code
         //System.out.println("Power = "+power(2,4));
         //Power = 16
-        System.out.println(fact(4));//24
-
+        //System.out.println(fact(4));//24
+        System.out.println(digitCount(123));
     }
-    //find factorial
-    public static int fact(int num){ // 1
-        if (num==0 || num==1){//num = 1 true
+    //digit Count
+    public static int digitCount(int num){//1
+        if(num/10 == 0){//num/10 == 0 true
             return 1;
         }
-        else {
-            return num * fact(num - 1);//recursive call(stack push)
+        else{
+            //recursive call
+            return 1 + digitCount(num/10);//stack push
         }
+
+
     }
+
+
+    //find factorial
+//    public static int fact(int num){ // 1
+//        if (num==0 || num==1){//num = 1 true
+//            return 1;
+//        }
+//        else {
+//            return num * fact(num - 1);//recursive call(stack push)
+//        }
+//    }
 
 
 
